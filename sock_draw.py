@@ -1,3 +1,7 @@
+# Basically, just draws an eternal 1x1 ribbing.
+# I'm really good at this or something. 
+# Yay knitting.
+
 import random
 import sys
 
