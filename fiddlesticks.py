@@ -9,15 +9,17 @@
 
 import random
 
+# constants
 word = "caw"
 endpunc = [".", "!", "?", "..."]
-midpunc = ["...", "-", ",", ":", ";"]
+midpunc = [" -", ",", ":", ";"]
+allpunc = midpunc + endpunc
+n = 100 # how many words do you want
 
-allpunc = endpunc + midpunc
-
+# variables
 sent = []
-
 upper = True
+x = 0
 
 def addpunc(s):    # adds punctuation to the end of a word, maybe
     result = s
@@ -26,16 +28,24 @@ def addpunc(s):    # adds punctuation to the end of a word, maybe
     result += " "
     return result
 
-
-for x in range (0, 100):    # adds the capitalized form based on punc
+while True:    # creates the body of the novel
+    # checks to see if it's > n iterations and end of a sentence
+    if x > n and upper:
+        break
+    # checks whether the flag for capitalization is set, if it is, 
+    # uses title case, if not, just appends with possible punctuation
     if upper:
         sent.append(addpunc(word).title())
     else:
         sent.append(addpunc(word))
+    # checks the capitalization of the last word added, sets flag
     if sent[x][3] in endpunc:
         upper = True
+        if random.random() <= 0.1:
+            sent[x] += "\n" # occasionally throws in a paragraph break
     else:
         upper = False
+    x += 1
 
-print "".join(sent),
+print "".join(sent)
 print "An enemy has been slain."
