@@ -14,7 +14,7 @@ word = "caw"
 endpunc = [".", "!", "?", "..."]
 midpunc = [" -", ",", ":", ";"]
 allpunc = midpunc + endpunc
-n = 100 # how many words do you want
+n = 50000 # 50k words, because NaNoGenMo
 
 # variables
 sent = []
